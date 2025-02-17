@@ -1,0 +1,68 @@
+@model OverAnalysisApp.Models.SearchViewModel
+
+@{
+    ViewBag.Title = "AnalysisReport";
+}
+
+<h2>Search over analysis report</h2>
+
+
+@using (Html.BeginForm("AnalysisReport","Overs",FormMethod.Post))
+{
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.BowlerName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BowlerName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BowlerName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DeliveryTypes, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.DeliveryTypes, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DeliveryTypes, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input id="btnSubmit" type="submit" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+
+
+    <h3 id="Message">@ViewBag.Message</h3>
+    @if (Model != null)
+    {
+        <table id="AnalysisReport" class="table">
+                <tr>
+                    <th>OverNumber</th>
+                    <th>BallNo</th>
+                    <th>BallName</th>
+                    <th>Runs</th>
+                    <th>IsWicketTaken</th>
+                </tr>
+                @foreach (var item in Model.OverDetails)
+                {
+                    <tr>
+                        <td>@item.OverNumber</td>
+                        <td>@item.BallNo</td>
+                        <td>@item.BowlerName</td>
+                        <td>@item.Runs</td>
+                        <td>@item.IsWicketTaken</td>
+                    </tr>
+                }
+        </table>
+    }
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

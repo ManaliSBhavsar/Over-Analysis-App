@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <!-- Section for custom configuration settings (if any) -->
+  </configSections>
+
+  <appSettings>
+    <!-- Add your app-specific settings here -->
+    <add key="AppName" value="OverAnalysisApp"/>
+  </appSettings>
+
+  <connectionStrings>
+    <!-- Connection string to your SQL Server database -->
+    <add name="OverAnalysisConnection" 
+         connectionString="Server=your_server;Database=OverAnalysisDB;User Id=your_user;Password=your_password;" 
+         providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+
+  <system.web>
+    <compilation targetFramework="4.5" />
+    <authentication mode="None" /> <!-- Set your authentication mode -->
+    <customErrors mode="On">
+      <error statusCode="404" redirect="~/Error/PageNotFound" />
+      <error statusCode="500" redirect="~/Error/ServerError" />
+    </customErrors>
+    
+    <httpRuntime requestValidationMode="2.0" targetFramework="4.5" />
+    <!-- Add more settings like authentication, authorization, etc. -->
+  </system.web>
+
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0"/>
+      </dependentAssembly>
+      <!-- Add more assembly bindings if necessary -->
+    </assemblyBinding>
+  </runtime>
+
+  <system.webServer>
+    <modules>
+      <remove name="WebDAVModule" />
+      <add name="CustomErrors" type="System.Web.HttpExceptionModule, System.Web" preCondition="integratedMode" />
+    </modules>
+
+    <defaultDocument>
+      <files>
+        <add value="index.html" />
+        <add value="default.aspx" />
+        <add value="Default.cshtml" />
+      </files>
+    </defaultDocument>
+    
+    <!-- Add other web server configurations like static file caching, security, etc. -->
+  </system.webServer>
+</configuration>
