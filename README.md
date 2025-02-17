@@ -12,6 +12,9 @@ SQL Server: relational database for storing data
 Asp.NET MVC: Light weight framework for developing server-side application which provides separation of concerns for developing applications using asp.net 
 Entity framework: Provides an ORM to map a relational model with the object oriented model.
 
+# Database Setup
+The database integration is part of the full implementation, but is excluded from the GitHub repository for simplicity.
+
 Steps:
 User launches the application 
 Add over details page will be displayed to the user
