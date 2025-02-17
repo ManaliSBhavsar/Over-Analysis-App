@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2019
+VisualStudioVersion = 16.0.29809.91
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E53F8FEA-9BFD-11d3-8E90-00C04F79E267}") = "OverAnalysisApp", "OverAnalysisApp\OverAnalysisApp.csproj", "{EC95C74E-2557-4934-91E5-7F9B9A4A5C10}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {EC95C74E-2557-4934-91E5-7F9B9A4A5C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {EC95C74E-2557-4934-91E5-7F9B9A4A5C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {EC95C74E-2557-4934-91E5-7F9B9A4A5C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {EC95C74E-2557-4934-91E5-7F9B9A4A5C10}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal
